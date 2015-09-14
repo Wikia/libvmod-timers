@@ -1,4 +1,6 @@
 $Module timers 3 Timers
+$Init init_function
 $Function TIME req_start()
-$Function INT req_response_time()
+$Function VOID unit(PRIV_VCL, STRING)
+$Function INT req_response_time(PRIV_VCL)
 $Function INT duration2int(DURATION, INT)
