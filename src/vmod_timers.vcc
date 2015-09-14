@@ -1,0 +1,3 @@
+$Module timers 3 Timers
+$Function TIME req_start()
+$Function INT duration2int(DURATION, INT)

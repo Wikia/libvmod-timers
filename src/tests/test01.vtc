@@ -1,0 +1,32 @@
+varnishtest "Test timers vmod"
+
+server s1 {
+       rxreq
+       txresp
+} -start
+
+# Function REAL req_start(PRIV_VCL)
+
+#    12 VCL_Log      c d req_start 1345837683.704
+
+varnish v1 -vcl+backend {
+    import std;
+    import timers from "${vmod_topbuild}/src/.libs/libvmod_timers.so";
+
+    ### XXX there isn't regex support to check the answers, so resort to
+    ### setting flags in vcl deliver :(
+    sub vcl_deliver {
+        if (std.time2real(timers.req_start()) > 0) {
+            set resp.http.req_start = 1;
+        }
+    }
+
+} -start
+
+client c1 {
+    txreq -url "/"
+    rxresp
+    expect resp.http.req_start              == 1
+}
+
+client c1 -run
