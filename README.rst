@@ -2,6 +2,14 @@
 vmod_timers
 ============
 
+IMPORTANT
+=========
+
+This version contains implementation only for timers.req_response_time() function
+working with Varnish 4. Function returns time (in ms) from delegation to backend 
+to first byte from backend.
+If you need another compatibility feel free to extend the logic.
+
 ----------------------
 Varnish timers Module
 ----------------------
