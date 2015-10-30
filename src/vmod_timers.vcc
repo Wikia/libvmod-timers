@@ -1,5 +1,5 @@
 $Module timers 3 Timers
-$Init init_function
+$Event event_function
 $Function TIME req_start()
 $Function VOID unit(PRIV_VCL, STRING)
 $Function INT req_response_time(PRIV_VCL)

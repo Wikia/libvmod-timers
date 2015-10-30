@@ -1,0 +1,12 @@
+Source: libvmod-timers
+Section: web
+Priority: extra
+Maintainer: Ops <ops-l@wikia-inc.com>
+Build-Depends: debhelper (>= 7), build-essential, python-docutils
+Standards-Version: 1.0
+
+Package: libvmod-timers
+Architecture: all
+Depends: varnish, ${misc:Depends}
+Description: Varnish Module (vmod) for accessing various timers from Varnish.
+Homepage: https://github.com/Wikia/libvmod-timers

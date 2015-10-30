@@ -16,7 +16,7 @@ varnish v1 -vcl+backend {
     ### XXX there isn't regex support to check the answers, so resort to
     ### setting flags in vcl deliver :(
     sub vcl_deliver {
-        if (std.time2real(timers.req_start()) > 0) {
+        if (std.time2real(timers.req_start(), 0) > 0) {
             set resp.http.req_start = 1;
         }
     }
