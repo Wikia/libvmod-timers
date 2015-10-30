@@ -243,3 +243,5 @@ This document is licensed under the same license as the
 libvmod-timers project. See LICENSE for details.
 
 * Copyright (c) 2012 Jos Boumans
+* Copyright (c) 2015 Artur Sitarski
+* Copyright (c) 2015 Lukasz Jagiello
