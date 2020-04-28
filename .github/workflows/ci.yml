@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: apt
       run: |
-        echo A9897320C397E3A60C03E8BF821AD320F71BFF3D | sudo apt-key add - &&
+        curl -L https://packagecloud.io/varnishcache/varnish64/gpgkey | sudo apt-key add - &&
         sudo echo "deb https://packagecloud.io/varnishcache/varnish64/ubuntu/ bionic main" > /etc/apt/sources.list.d/varnish.list &&
         sudo apt-get update &&
         sudo apt-get install -y varnish-dev
