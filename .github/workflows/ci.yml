@@ -18,7 +18,7 @@ jobs:
         curl -L https://packagecloud.io/varnishcache/varnish64/gpgkey | sudo apt-key add - &&
         echo "deb https://packagecloud.io/varnishcache/varnish64/ubuntu/ bionic main" | sudo tee /etc/apt/sources.list.d/varnish.list &&
         sudo apt-get update &&
-        sudo apt-get install -y varnish-dev
+        sudo apt-get install -y docutils-common varnish-dev
     - name: autogen
       run: ./autogen.sh
     - name: configure
